@@ -1,0 +1,14 @@
+.app__footer {
+    background-color: #EDEFEE;
+}
+
+
+.app__footer-section {
+    /* display: grid;
+    grid-template-columns: repeat(4, auto); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    color: #495E57;
+}
