@@ -14,55 +14,50 @@ function App() {
     setPath(location.pathname);
   }, [location.pathname]);
 
-    let data = {};
-    if(path === '/' || path === '/Little-Lemon') {
-      data = headerData;
-    } else if (path === '/Reservations') {
-      data = reservationData;
-    } else if (path === '/OrderOnline') {
-      data = orderOnline;
-    }
-    
+  let data = {};
+  if(path === '/' || path === '/Little-Lemon') {
+    data = headerData;
+  } else if (path === '/Reservations') {
+    data = reservationData;
+  } else if (path === '/OrderOnline') {
+    data = orderOnline;
+  }
+
   return (
-    <>
-      <Navbar />
-        <DataContext.Provider value={data}>
-            <Routes>
-              <Route path='/Little-Lemon' element={(
-                <>
-                  <Header />
-                  <Main />
-                </>)}
-              />                  
-              <Route path='/' element ={(
-                <>
-                  <Header />
-                  <Main />
-                </>)}
-              />
-              <Route path='/Reservations' element={(
-                <>
-                  <Header />
-                  <Reservations />
-                </>)} 
-              />
-              <Route path='/OrderOnline' element={(
-                <>
-                  <Header />
-                  <OrderOnline />  
-                </>
-                )} 
-              />                  
+      <>
+        <Navbar />
+          <DataContext.Provider value={data}>
+              <Routes>
+                <Route path='/Little-Lemon' element={(
+                  <>
+                    <Header />
+                    <Main />
+                  </>
+                )}/>                  
+                <Route path='/' element={(
+                  <>
+                    <Header />
+                    <Main />
+                  </>
+                )}/>
+                <Route path='/Reservations' element={(
+                  <>
+                    <Header />
+                    <Reservations />  
+                  </>
+                )}/>
+                <Route path='/OrderOnline' element={(
+                  <>
+                    <Header />
+                    <OrderOnline />  
+                  </>
+                )}/>                  
 
-              <Route 
-                path='/ConfirmedBooking'
-                element={<ConfirmedBooking/>}
-              />
-
-            </Routes>
-        </DataContext.Provider>
-      <Footer />
-    </>
+                <Route path='/ConfirmedBooking' element={<ConfirmedBooking/>}/>
+              </Routes>
+          </DataContext.Provider>
+        <Footer />
+      </>
   );
 }
 

@@ -3,7 +3,8 @@ import './Navbar.css';
 import { images } from "../../constants";
 import {HiMenuAlt4, HiX} from 'react-icons/hi';
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
+import {Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
@@ -11,6 +12,7 @@ const Navbar = () => {
 
     return (
         <nav className="app__navbar">
+
             <div className="app__navbar-logo">
                 <img src={images.logo} alt="logo" />
             </div>
@@ -28,23 +30,22 @@ const Navbar = () => {
                     onClick={() => { setToggle(true) }}
                     className="app__navbar-hamburger"
                 />
-                {
-                toggle &&  (
-                <div>
-                    <HiX 
-                        onClick={() => {
-                            setToggle(false)
-                        }} 
-                        className="app__navbar-cancel"
-                    />
+                {toggle &&  (
+                    <div>
+                        <HiX 
+                            onClick={() => {
+                                setToggle(false)
+                            }} 
+                            className="app__navbar-cancel"
+                        />
 
-                    <Link className="link" to={"/"} onClick={() => { setToggle(false)}}>Home</Link>
-                    <Link className="link" to={'/Reservations'} onClick={() => { setToggle(false)}}>Reservation</Link>
-                    <Link className="link" to={"/OrderOnline"} onClick={() => { setToggle(false)}}>OrderOnline</Link>
-                    <HashLink className="link" smooth to="/#Menu" onClick={() => { setToggle(false)}}>Menu</HashLink>
-                    <HashLink className="link" smooth to="/#About" onClick={() => { setToggle(false)}}>About</HashLink>     
+                        <Link className="link" to={"/"} onClick={() => { setToggle(false)}}>Home</Link>
+                        <Link className="link" to={'/Reservations'} onClick={() => { setToggle(false)}}>Reservation</Link>
+                        <Link className="link" to={"/OrderOnline"} onClick={() => { setToggle(false)}}>OrderOnline</Link>
+                        <HashLink className="link" smooth to="/#Menu" onClick={() => { setToggle(false)}}>Menu</HashLink>
+                        <HashLink className="link" smooth to="/#About" onClick={() => { setToggle(false)}}>About</HashLink>     
 
-                </div>
+                    </div>
                 )}
             </div>
         </nav>
